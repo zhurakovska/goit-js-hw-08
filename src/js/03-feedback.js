@@ -29,5 +29,3 @@ const onFormSubmit = (event) => {
 
 formEl.addEventListener('input', throttle(onFormInput, 500));
 formEl.addEventListener('submit', onFormSubmit);
-
-
