@@ -28,5 +28,5 @@ player.setCurrentTime(timeParse.seconds).then(function(seconds) {
             default:
                 // some other error occurred
                 break;
-        }
-});     
+        }   
+    });     
