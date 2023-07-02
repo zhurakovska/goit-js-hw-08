@@ -1,5 +1,5 @@
 import Player from '@vimeo/player';
-import { throttle } from 'lodash';
+import throttle from 'lodash.throttle';
 
 const div = document.getElementById('vimeo-player');
 const player = new Player(div, {
@@ -12,7 +12,7 @@ const onPlay = function(data) {
     localStorage.setItem('videoplayer-current-time', JSON.stringify(data));
 };
 
-player.on('timeupdate', throttle(onPlay ,1000));
+player.on('timeupdate', throttle(onPlay, 1000));
 
 const timeString = localStorage.getItem('videoplayer-current-time');
 const timeParse = JSON.parse(timeString)
