@@ -1,12 +1,6 @@
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
-
-const div = document.getElementById('vimeo-player');
-const player = new Player(div, {
-  id: 76979871,
-  height: 360,
-  width: 640
-});
+const player = new Player('vimeo-player');
 
 const onPlay = function(data) {
     localStorage.setItem('videoplayer-current-time', JSON.stringify(data))
@@ -18,5 +12,6 @@ const timeString = localStorage.getItem('videoplayer-current-time');
 if (timeString) {
     const timeParse = JSON.parse(timeString);
     player.setCurrentTime(timeParse.seconds)
-    return
-} 
+} else {
+  console.log('Play time not found in localStorage');
+}
