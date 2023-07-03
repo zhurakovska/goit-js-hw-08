@@ -20,6 +20,7 @@ const onFormInput = ({ target }) => {
     userData[userKey] = userValue;
     const dataLocal = JSON.parse(localStorage.getItem('feedback-form-state'))
     localStorage.setItem("feedback-form-state", JSON.stringify({...dataLocal, ...userData}));
+
 };
 
 const onFormSubmit = (event) => {
